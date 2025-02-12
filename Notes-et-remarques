@@ -1,0 +1,45 @@
+Problèmes potentiels liés à la detection du template:
+-Etant donné la présence du template constamment en bas à gauche, plusieurs pb se posent
+1. Il faut faire en sorte de ne pas le prendre en compte (étant donné que ses coordonnées sont constantes,
+ on peut exclure cette zone de la détection)
+2. Lorsque le template (qu'on veut détecter) se trouve derrière le template en bas à gauche,
+il faut trouver un moyen de gérer ca (idée: dès que le tamplate principale n'est plus détecté, on peut supposer qu'il
+est dans cette zone)
+
+-Le template principale n'est plus détecter derrière certaine zone de texte comme en bas à gauche
+-Il n'est pas détecté tout le temps car il y a une animation sur l'icone dans le jeu (lueur blanche tt les 2 secondes environ)
+
+JOURNAL DE BORD:
+
+11/02-------------
+La détection vidéo marche à un seuil de plus de 0,8 mais la vidéo est lente
+je me demande alors si en temps réel cela va poser des pb
+-Réduire la taille des images:
+Ne detecte plus les templates
+
+-Modifier les FPS dans cv2.waitKey():
+Ne change rien à la durée de la vidéos
+
+-Traiter la vidéo toutes les X images: (SOLUTION EFFICACE)
+Cela réduit drastiquement le temps de calcul et accèlere la vidéo ( entre toute les 2 et 3 image cela revient
+ au temps réel de la vidéo, cela depend evidement de la puissance de la machine)
+
+12/02-------------
+
+J'essaye maintenant de faire de la detection du template en temps reel
+en capturant mon ecran en temps reel avec mss
+
+Premier test: ne detecte pas le template que ce soit avec une vidéo sur yt ou si j'affiche simplement le template
+Meme en réduisant le seuil, le template n'est pas détécté (du moins il n'y a pas de rectangle affiché)
+
+J'ai "print()" les loc, la loc est sous la forme
+Template détecté à: (array([], dtype=int64), array([], dtype=int64))
+Donc ne detecte pas
+
+J'ai abaissé le seuil et maintenant il y a des détections mais le rectangle ne se trace pas
+
+En abaissant le seuil à 0.8 on a des detection (il est bon de remarqué qu'il n'y a qu'une taille qui est détecté si
+le template est trop grand ou trop petit il ne l'est pas)
+J'ai converti les coordonées en int car elles étaient en int64, ca n'a pas résolu le pb
+
+Je met ce pb de coté pour le moment car les détections ont l'air d'etre correctes
