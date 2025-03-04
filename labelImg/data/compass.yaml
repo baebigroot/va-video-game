@@ -1,0 +1,6 @@
+path: ./  # Thư mục chứa dữ liệu
+train: images/train  # Ảnh huấn luyện
+val: images/val  # Ảnh validation
+test: images/test  # Ảnh test
+nc: 1  # Số lượng class (ở đây chỉ có 'compass')
+names: ["compass"]

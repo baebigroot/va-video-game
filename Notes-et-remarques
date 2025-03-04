@@ -43,3 +43,13 @@ le template est trop grand ou trop petit il ne l'est pas)
 J'ai converti les coordonées en int car elles étaient en int64, ca n'a pas résolu le pb
 
 Je met ce pb de coté pour le moment car les détections ont l'air d'etre correctes
+
+15/02-------------
+J'ai cherché différentes méthodes pour détecter un objet en mouvement, étant donné que le *template matching* fonctionne bien pour des objets fixes à l'écran, mais peut-être pas de manière optimale pour les objets en mouvement. 
+SORT/DeepSORT, BoxMOT et YOLOv8/Faster R-CNN sont des méthodes qui pourraient être plus adaptées à la détection d'objets en mouvement.
+À voir comment on peut les implémenter dans notre cas.
+
+
+21/02 - 28/02-------------
+Je créer un mindmap sur Canva pour mieux visualiser les différentes étapes de notre projet et les différentes méthodes que l'on peut utiliser. (https://www.canva.com/design/DAGgxuIKudk/_AC-SyaRSpaHe2lMpno9nA/edit?utm_content=DAGgxuIKudk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+Dans un premier temps, j'ai décidé d'implémenter YOLOv8 et d'utiliser LabelImg pour l'annotation. J'ai installé les dépendances nécessaires et commencé à entraîner notre modèle sur un dataset de quelques images
