@@ -1,0 +1,13 @@
+names:
+- compass
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: hogwarts-legacy-va
+  url: https://universe.roboflow.com/hogwartslegacyva/hogwarts-legacy-va/dataset/1
+  version: 1
+  workspace: hogwartslegacyva
+path: E:/Sorbonne/S2/project-IMA/va-video-game/hogwarts-legacy-va-1
+test: ../test/images
+train: ../train/images
+val: ../val/images
