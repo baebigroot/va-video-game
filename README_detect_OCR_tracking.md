@@ -40,6 +40,7 @@ This script performs object detection, tracking, and OCR (Optical Character Reco
 - PyTorch
 - EasyOCR
 - NumPy
+- SORT (https://github.com/abewley/sort)
 
 ## Usage
 **Note:** This is a model already trained using data from Roboflow. You can access the dataset directly here: https://app.roboflow.com/hogwartslegacyva/hogwarts-legacy-va/1. Feel free to use this dataset to retrain or fine-tune the model for your own usage and project needs. Then place the trained YOLOv8 weights in `runs/detect/train/weights/best.pt`.
