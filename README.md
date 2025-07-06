@@ -1,4 +1,4 @@
-# detect_OCR_tracking.py
+# Virtual Assistant for Video Game Accessibility
 
 ## Overview
 
@@ -31,6 +31,7 @@ This script performs object detection, tracking, and OCR (Optical Character Reco
    - Only compasses with detected digits are tracked.
    - Updates and maintains tracking IDs for compasses.
 4. Releases resources and closes all windows after processing, or press 'q' to exit early.
+**Note:** The current model is limited in its ability to generalize to all possible compass variations in the game. Some misdetections may occur, especially when the compass moves quickly across the screen.
 
 ## Requirements
 

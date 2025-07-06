@@ -14,11 +14,11 @@ from sort import Sort
 model = YOLO("runs/detect/train/weights/best.pt") 
 
 # Open video
-video_path = "test_videos/OCR-test2.mp4"
+video_path = "test_videos/OCR-test.mp4"
 cap = cv2.VideoCapture(video_path)
 
 if not cap.isOpened():
-    print("Can't open multiple videos")
+    print("Can't open video")
     exit()
 
 # Initialize SORT tracker
